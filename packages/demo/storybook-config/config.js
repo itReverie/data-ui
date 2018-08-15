@@ -4,12 +4,11 @@ import { configure, setAddon } from '@storybook/react';
 import { setOptions } from '@storybook/addon-options';
 
 import ExampleWithInfo from './components/ExampleWithInfo';
-import { analytics } from '../storybook-config/components/GoogleAnalytics';
 
 // Customize the UI
 setOptions({
-  name: '📈 data-ui',
-  url: 'https://williaster.github.io/data-ui',
+  name: '🛒 components library',
+  url: 'http://localhost:9000',
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: false,
@@ -29,7 +28,6 @@ setAddon({
         components={components}
         usage={usage}
         useHOC={useHOC}
-        analytics={analytics}
       />
     ));
   },

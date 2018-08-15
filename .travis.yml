@@ -5,14 +5,9 @@ cache:
   directories:
     - node_modules
 env:
-  - PACKAGE=xy-chart
-  - PACKAGE=sparkline
-  - PACKAGE=histogram
-  - PACKAGE=radial-chart
   - PACKAGE=data-table
   - PACKAGE=data-ui-theme
   - PACKAGE=forms
-  - PACKAGE=network
   - PACKAGE=shared
 script:
   - 'cd ./packages/$PACKAGE && npm install && npm prune && npm run test'

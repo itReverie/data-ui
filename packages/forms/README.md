@@ -1,7 +1,7 @@
 # @data-ui/forms
-A package of form elements for data-rich UIs.
+A package of basic elements to use along all the the site.
 
-demo at <a href="https://williaster.github.io/data-ui" target="_blank">williaster.github.io/data-ui</a>
+If you would like to use the basic components, you just need to install the basic-components package. 
 
 ## Development
 ```shell

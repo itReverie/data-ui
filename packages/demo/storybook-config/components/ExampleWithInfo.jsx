@@ -14,15 +14,13 @@ const propTypes = {
   storyFn: PropTypes.func.isRequired,
   components: PropTypes.arrayOf(PropTypes.func),
   usage: PropTypes.string,
-  useHOC: PropTypes.bool,
-  analytics: PropTypes.func,
+  useHOC: PropTypes.bool
 };
 
 const defaultProps = {
   usage: null,
   components: [],
-  analytics() {},
-  useHOC: false,
+  useHOC: false
 };
 
 class ExampleWithInfo extends React.Component {
@@ -37,9 +35,8 @@ class ExampleWithInfo extends React.Component {
   }
 
   handlePressTab(activeTab) {
-    const { kind, story, analytics } = this.props;
+    const { kind, story } = this.props;
     this.setState({ activeTab });
-    analytics({ kind, story, tab: activeTab });
   }
 
   render() {

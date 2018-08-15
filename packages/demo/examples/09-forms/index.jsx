@@ -1,5 +1,4 @@
 import React from 'react';
-import { withState } from 'recompose';
 
 import {
   Button,
@@ -8,17 +7,6 @@ import {
 } from '@data-ui/forms';
 
 import readme from '../../node_modules/@data-ui/forms/README.md';
-
-const formatLookup = {
-  '-1': 'last',
-  1: '1st',
-  2: '2nd',
-  3: '3rd',
-  4: '4th',
-  5: '5th',
-};
-
-const controlledSelect = withState('value', 'setValue', { value: 'b' });
 
 export default {
   usage: readme,
@@ -31,63 +19,29 @@ export default {
       ),
     },
     {
-      description: 'Stepper -- disable zero, custom label',
-      components: [StepIncrementer],
-      example: () => (
-        <StepIncrementer
-          min={-1}
-          max={5}
-          formatValue={val => formatLookup[val]}
-          disableZero
-        />
-      ),
-    },
-    {
       description: 'Select',
       components: [Select],
       example: () => (
         <Select
+          autosize={true}
           options={[
-            { value: 'a', label: 'a' },
-            { value: 'b', label: 'b' },
-            { value: 'c', label: 'c' },
+            { value: 'Fedex', label: 'Fedex' },
+            { value: 'UPS', label: 'UPS' },
+            { value: 'DHL', label: 'DHL' },
+            { value: 'LocalPost', label: 'LocalPost' },
           ]}
         />
       ),
     },
     {
-      description: 'Select -- controlled',
-      components: [Select],
-      example: () => React.createElement(
-        controlledSelect(({ value, setValue }) => (
-          <Select
-            value={value.value}
-            onChange={setValue}
-            options={[
-              { value: 'a', label: 'a' },
-              { value: 'b', label: 'b' },
-              { value: 'c', label: 'c' },
-            ]}
-          />
-        ),
-      )),
-    },
-    {
       description: 'Button -- text',
       components: [Button],
       example: () => (
-        <Button>Hello, world</Button>
+        <Button rounded>{'Add'}</Button>
       ),
     },
     {
-      description: 'Button -- rounded',
-      components: [Button],
-      example: () => (
-        <Button rounded>{'A bit round'}</Button>
-      ),
-    },
-    {
-      description: 'Button -- round, disabled',
+      description: 'Button -- removed',
       components: [Button],
       example: () => (
         <Button rounded disabled>x</Button>

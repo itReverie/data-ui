@@ -18,7 +18,6 @@
  */
 import path from 'path';
 import { storiesOf } from '@storybook/react';
-import GoogleAnalyticsDecorator from '../storybook-config/components/GoogleAnalytics';
 
 const requireContext = require.context('./', /* subdirs= */true, /index\.jsx?$/);
 
@@ -31,9 +30,6 @@ requireContext.keys().forEach((packageName) => {
       if ((/^\d\d-/).test(name)) name = name.slice(3); // no 'XX-'
 
       const stories = storiesOf(name, module);
-
-      // log story views + events
-      stories.addDecorator(GoogleAnalyticsDecorator);
 
       // wrap stories
       examples.forEach((example) => {
